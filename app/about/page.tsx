@@ -571,7 +571,7 @@ export default function About() {
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
                               src="/websitepics/americanredcross.png1.png"
-                              alt="American Red Cross Icon"
+                              alt="American Red Cross Icon  "
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
                               unoptimized

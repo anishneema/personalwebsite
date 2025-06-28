@@ -105,7 +105,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl transform rotate-6 shadow-2xl shadow-cyan-500/50"></div>
                   <div className="absolute inset-0 bg-gray-900 rounded-2xl overflow-hidden transform -rotate-3 shadow-xl border border-gray-700">
                     <Image
-                      src="/websitepics/anish.jpg"
+                      src="./websitepics/anish.jpg"
                       alt="Profile"
                       fill
                       className="object-cover"
