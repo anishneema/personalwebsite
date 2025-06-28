@@ -110,6 +110,7 @@ export default function Home() {
                       fill
                       className="object-cover"
                       priority
+                      unoptimized
                     />
                   </div>
                 </div>
@@ -255,6 +256,7 @@ export default function Home() {
                       width={350}
                       height={175}
                       className="object-contain w-full h-full bg-black"
+                      unoptimized
                     />
                   </div>
                   <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
@@ -264,6 +266,7 @@ export default function Home() {
                       width={350}
                       height={175}
                       className="object-contain w-full h-full bg-black"
+                      unoptimized
                     />
                   </div>
                 </div>
@@ -311,6 +314,7 @@ export default function Home() {
                       width={600}
                       height={300}
                       className="object-contain w-full h-full bg-black"
+                      unoptimized
                     />
                   </div>
                   <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
@@ -320,6 +324,7 @@ export default function Home() {
                       width={600}
                       height={300}
                       className="object-contain w-full h-full bg-black"
+                      unoptimized
                     />
                   </div>
                 </div>

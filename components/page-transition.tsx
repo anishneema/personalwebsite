@@ -17,7 +17,7 @@ export function PageTransition({ children }: PageTransitionProps) {
 
   return (
     <div
-      className={`min-h-screen transition-all duration-500 ease-out transform ${
+      className={`min-h-screen transition-all duration-300 ease-out transform ${
         isVisible
           ? "opacity-100 translate-x-0"
           : "opacity-0 translate-x-full"
@@ -58,7 +58,7 @@ export function AnimatedLink({
     fadeOverlay.style.backgroundColor = 'black'
     fadeOverlay.style.zIndex = '9999'
     fadeOverlay.style.opacity = '0'
-    fadeOverlay.style.transition = 'opacity 0.3s ease-out'
+    fadeOverlay.style.transition = 'opacity 0.15s ease-out'
     document.body.appendChild(fadeOverlay)
     
     // Fade in the overlay
@@ -75,8 +75,8 @@ export function AnimatedLink({
           document.body.removeChild(fadeOverlay)
         }
         isTransitioning = false
-      }, 200)
-    }, 300)
+      }, 100)
+    }, 150)
   }
 
   return (

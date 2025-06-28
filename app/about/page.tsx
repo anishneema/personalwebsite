@@ -175,6 +175,7 @@ export default function About() {
                       fill
                       className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-black"
                       priority
+                      unoptimized
                     />
                   </div>
                   {showPowerliftingLightbox && (
@@ -186,6 +187,7 @@ export default function About() {
                           fill
                           className="object-contain rounded-xl shadow-2xl bg-black"
                           priority
+                          unoptimized
                         />
                       </div>
                     </div>
@@ -199,6 +201,7 @@ export default function About() {
                     fill
                     className="object-contain rounded-full border-4 border-cyan-500 shadow-lg bg-white"
                     priority
+                    unoptimized
                   />
                 </div>
               ) : selectedBubble === 'Current Goals' ? (
@@ -209,6 +212,7 @@ export default function About() {
                     fill
                     className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
                     priority
+                    unoptimized
                   />
                 </div>
               ) : selectedBubble === 'Awards' ? (
@@ -219,6 +223,7 @@ export default function About() {
                     fill
                     className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
                     priority
+                    unoptimized
                   />
                 </div>
               ) : (
@@ -323,6 +328,7 @@ export default function About() {
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -336,6 +342,7 @@ export default function About() {
                               alt="American Red Cross Icon"
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -349,6 +356,7 @@ export default function About() {
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -362,6 +370,7 @@ export default function About() {
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -376,6 +385,7 @@ export default function About() {
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -389,6 +399,7 @@ export default function About() {
                               alt="American Red Cross Icon"
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -402,6 +413,7 @@ export default function About() {
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -415,6 +427,7 @@ export default function About() {
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -433,6 +446,7 @@ export default function About() {
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -446,6 +460,7 @@ export default function About() {
                               alt="American Red Cross Icon"
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -459,6 +474,7 @@ export default function About() {
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -472,6 +488,7 @@ export default function About() {
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -486,6 +503,7 @@ export default function About() {
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -499,6 +517,7 @@ export default function About() {
                               alt="American Red Cross Icon"
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -512,6 +531,7 @@ export default function About() {
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -525,6 +545,7 @@ export default function About() {
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -539,6 +560,7 @@ export default function About() {
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -552,6 +574,7 @@ export default function About() {
                               alt="American Red Cross Icon"
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -565,6 +588,7 @@ export default function About() {
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -578,6 +602,7 @@ export default function About() {
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
+                              unoptimized
                             />
                           </div>
                         </div>
