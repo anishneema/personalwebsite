@@ -183,7 +183,7 @@ export default function Home() {
                     asChild
                     className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-xl py-5 text-lg flex items-center justify-center shadow-lg shadow-cyan-500/25 transition-all duration-300"
                   >
-                    <a href="/websitepics/resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="./websitepics/resume.pdf" target="_blank" rel="noopener noreferrer">
                       <Download className="w-5 h-5 mr-2" />
                       Download Resume
                     </a>
@@ -251,7 +251,7 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 gap-4 p-6 bg-gray-900">
                   <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
                     <Image
-                      src="/websitepics/welcome.png"
+                      src="./websitepics/welcome.png"
                       alt="Welcome to Gymseekr"
                       width={350}
                       height={175}
@@ -261,7 +261,7 @@ export default function Home() {
                   </div>
                   <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                     <Image
-                      src="/websitepics/nearbygyms.png"
+                      src="./websitepics/nearbygyms.png"
                       alt="Nearby Gyms - Gymseekr"
                       width={350}
                       height={175}
@@ -299,7 +299,7 @@ export default function Home() {
                         variant="outline"
                         className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 border-none rounded-full px-6 transition-all duration-300"
                       >
-                        <a href="/websitepics/portfolio.pdf" target="_blank" rel="noopener noreferrer">
+                        <a href="./websitepics/portfolio.pdf" target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" /> Demo Link
                         </a>
                       </Button>
@@ -309,7 +309,7 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 gap-4 p-6 bg-gray-900">
                   <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
                     <Image
-                      src="/websitepics/walle.png"
+                      src="./websitepics/walle.png"
                       alt="Project Photo - WALLE"
                       width={600}
                       height={300}
@@ -319,7 +319,7 @@ export default function Home() {
                   </div>
                   <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                     <Image
-                      src="/websitepics/walleschem.png"
+                      src="./websitepics/walleschem.png"
                       alt="Project Schematic - WALLE"
                       width={600}
                       height={300}

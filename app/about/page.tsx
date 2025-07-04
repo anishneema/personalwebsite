@@ -170,7 +170,7 @@ export default function About() {
                 <>
                   <div className="w-40 h-40 relative mb-6 cursor-pointer" onClick={() => setShowPowerliftingLightbox(true)}>
                     <Image
-                      src="/websitepics/powerlifting.jpeg"
+                      src="./websitepics/powerlifting.jpeg"
                       alt="Powerlifting Large"
                       fill
                       className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-black"
@@ -182,7 +182,7 @@ export default function About() {
                     <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/90" onClick={() => setShowPowerliftingLightbox(false)}>
                       <div className="relative w-full max-w-2xl h-[70vh] flex items-center justify-center">
                         <Image
-                          src="/websitepics/powerlifting.jpeg"
+                          src="./websitepics/powerlifting.jpeg"
                           alt="Powerlifting Full"
                           fill
                           className="object-contain rounded-xl shadow-2xl bg-black"
@@ -196,7 +196,7 @@ export default function About() {
               ) : selectedBubble === 'Volunteering' ? (
                 <div className="w-40 h-40 relative mb-6 flex items-center justify-center">
                   <Image
-                    src="/websitepics/americanredcross.png1.png"
+                    src="./websitepics/americanredcross.png1.png"
                     alt="American Red Cross Icon"
                     fill
                     className="object-contain rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -207,7 +207,7 @@ export default function About() {
               ) : selectedBubble === 'Current Goals' ? (
                 <div className="w-40 h-40 relative mb-6 flex items-center justify-center">
                   <Image
-                    src="/websitepics/goals.png"
+                    src="./websitepics/goals.png"
                     alt="Current Goals"
                     fill
                     className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -218,7 +218,7 @@ export default function About() {
               ) : selectedBubble === 'Awards' ? (
                 <div className="w-40 h-40 relative mb-6 flex items-center justify-center">
                   <Image
-                    src="/websitepics/award.png"
+                    src="./websitepics/award.png"
                     alt="Awards"
                     fill
                     className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -324,7 +324,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/powerlifting.jpeg"
+                              src="./websitepics/powerlifting.jpeg"
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
@@ -338,7 +338,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/americanredcross.png1.png"
+                              src="./websitepics/americanredcross.png1.png"
                               alt="American Red Cross Icon"
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -352,7 +352,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/goals.png"
+                              src="./websitepics/goals.png"
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
@@ -366,7 +366,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/award.png"
+                              src="./websitepics/award.png"
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
@@ -381,7 +381,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/powerlifting.jpeg"
+                              src="./websitepics/powerlifting.jpeg"
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
@@ -395,7 +395,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/americanredcross.png1.png"
+                              src="./websitepics/americanredcross.png1.png"
                               alt="American Red Cross Icon"
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -409,7 +409,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/goals.png"
+                              src="./websitepics/goals.png"
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
@@ -423,7 +423,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/award.png"
+                              src="./websitepics/award.png"
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
@@ -442,7 +442,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/powerlifting.jpeg"
+                              src="./websitepics/powerlifting.jpeg"
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
@@ -456,7 +456,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/americanredcross.png1.png"
+                              src="./websitepics/americanredcross.png1.png"
                               alt="American Red Cross Icon"
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -470,7 +470,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/goals.png"
+                              src="./websitepics/goals.png"
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
@@ -484,7 +484,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/award.png"
+                              src="./websitepics/award.png"
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
@@ -499,7 +499,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/powerlifting.jpeg"
+                              src="./websitepics/powerlifting.jpeg"
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
@@ -513,7 +513,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/americanredcross.png1.png"
+                              src="./websitepics/americanredcross.png1.png"
                               alt="American Red Cross Icon"
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -527,7 +527,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/goals.png"
+                              src="./websitepics/goals.png"
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
@@ -541,7 +541,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/award.png"
+                              src="./websitepics/award.png"
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
@@ -556,7 +556,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/powerlifting.jpeg"
+                              src="./websitepics/powerlifting.jpeg"
                               alt="Powerlifting"
                               fill
                               className="object-cover rounded-full"
@@ -570,7 +570,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/americanredcross.png1.png"
+                              src="./websitepics/americanredcross.png1.png"
                               alt="American Red Cross Icon  "
                               fill
                               className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -584,7 +584,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/goals.png"
+                              src="./websitepics/goals.png"
                               alt="Current Goals"
                               fill
                               className="object-cover rounded-full"
@@ -598,7 +598,7 @@ export default function About() {
                         <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
                           <div className="relative w-full h-full rounded-full overflow-hidden">
                             <Image
-                              src="/websitepics/award.png"
+                              src="./websitepics/award.png"
                               alt="Awards"
                               fill
                               className="object-cover rounded-full"
