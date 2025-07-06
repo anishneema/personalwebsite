@@ -16,36 +16,10 @@ type AwardsGroupsDescription = { text: string; groups: { label: string; items: s
 type BubbleDescription = string | VolunteeringDescription | AwardsDescription | CurrentGoalsDescription | AwardsGroupsDescription;
 
 export default function About() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [isScrolling, setIsScrolling] = useState(false)
-  const [cursorVisible, setCursorVisible] = useState(true)
   const router = useRouter()
   let isTransitioning = false
   const [selectedBubble, setSelectedBubble] = useState<string | null>(null)
   const [showPowerliftingLightbox, setShowPowerliftingLightbox] = useState(false)
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY })
-    }
-
-    // Hide cursor on scroll, show when at top
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setCursorVisible(true)
-      } else {
-        setCursorVisible(false)
-      }
-    }
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true })
-    window.addEventListener('scroll', handleScroll, { passive: true })
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
 
   const handleBackClick = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -273,27 +247,13 @@ export default function About() {
 
       <PageTransition>
     <main className="min-h-screen bg-black text-white">
-      {/* Custom Cursor Bubble */}
-      <div 
-            className={`fixed pointer-events-none z-[9999] transition-opacity duration-200 ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}
-        style={{
-          left: mousePosition.x - 25,
-          top: mousePosition.y - 25,
-              transform: 'translate3d(0, 0, 0)',
-              willChange: 'transform',
-        }}
-      >
-        <div className="w-12 h-12 border-2 border-cyan-400 rounded-full opacity-60 animate-pulse"></div>
-        <div className="w-8 h-8 border border-cyan-300 rounded-full opacity-40 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-      </div>
-
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
               <button
                 onClick={handleBackClick}
                 className="text-white hover:text-cyan-400 hover:bg-gray-800 transition-colors px-4 py-2 rounded-md"
-              >
+            >
                 <ArrowLeft className="h-4 w-4 mr-2 inline" />
               Back to Home
               </button>
@@ -301,314 +261,180 @@ export default function About() {
       </nav>
 
       {/* About Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <section className="pt-20 pb-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <div className="container mx-auto px-4">
-              <div className="text-center mb-32">
+          <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-white mb-4">About Me</h1>
             <div className="mt-4 h-1 w-20 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto"></div>
               </div>
 
-              {/* Animated Conveyor Belt Circles */}
-              <div className="relative mb-8 overflow-hidden" style={{ height: '12rem' }}>
-                {/* Main horizontal bar */}
-                <div className="absolute left-0 right-0 top-2/3 z-0" style={{ transform: 'translateY(-50%)' }}>
-                  <div className="w-full h-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/25"></div>
+              {/* Individual Clickable Cards */}
+              <div 
+                className="flex gap-8 pb-8 px-4 animate-scroll"
+                style={{ 
+                  scrollbarWidth: 'none', 
+                  msOverflowStyle: 'none',
+                  animation: 'scroll 30s linear infinite'
+                }}
+              >
+                <div 
+                  className="flex-shrink-0 w-80 h-96 bg-gray-900 rounded-2xl border border-cyan-500/30 cursor-pointer hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  onClick={() => setSelectedBubble('Powerlifting')}
+                >
+                  <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
+                    <Image
+                      src="./websitepics/powerlifting.jpeg"
+                      alt="Powerlifting"
+                      fill
+                      className="object-cover"
+                      priority
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-2">Powerlifting</h3>
+                    <p className="text-gray-300">Click to learn more about my powerlifting journey</p>
+                  </div>
                 </div>
-                {/* Animated circles container */}
-                <div className="absolute left-0 right-0 top-2/3 z-10" style={{ transform: 'translateY(-70%)' }}>
-                  <div className="flex items-end animate-conveyor-belt min-w-max">
-                    {/* First set of circles - repeated 3 times */}
-                    <div className="flex items-center gap-16 mx-8">
-                      {/* 1st set */}
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/powerlifting.jpeg"
-                              alt="Powerlifting"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Powerlifting</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/americanredcross.png1.png"
-                              alt="American Red Cross Icon"
-                              fill
-                              className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">American Red Cross</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/goals.png"
-                              alt="Current Goals"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Current Goals</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/award.png"
-                              alt="Awards"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Awards</p>
-                      </div>
-                      {/* 2nd set */}
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/powerlifting.jpeg"
-                              alt="Powerlifting"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Powerlifting</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/americanredcross.png1.png"
-                              alt="American Red Cross Icon"
-                              fill
-                              className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">American Red Cross</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/goals.png"
-                              alt="Current Goals"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Current Goals</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/award.png"
-                              alt="Awards"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Awards</p>
-                      </div>
+
+                <div 
+                  className="flex-shrink-0 w-80 h-96 bg-gray-900 rounded-2xl border border-cyan-500/30 cursor-pointer hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  onClick={() => setSelectedBubble('Volunteering')}
+                >
+                  <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
+                    <Image
+                      src="./websitepics/americanredcross.png1.png"
+                      alt="American Red Cross"
+                      fill
+                      className="object-contain bg-white"
+                      priority
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-2">Volunteering</h3>
+                    <p className="text-gray-300">Click to learn more about my volunteer work</p>
+                  </div>
+                </div>
+
+                <div 
+                  className="flex-shrink-0 w-80 h-96 bg-gray-900 rounded-2xl border border-cyan-500/30 cursor-pointer hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  onClick={() => setSelectedBubble('Current Goals')}
+                >
+                  <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
+                    <Image
+                      src="./websitepics/goals.png"
+                      alt="Current Goals"
+                      fill
+                      className="object-cover"
+                      priority
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-2">Current Goals</h3>
+                    <p className="text-gray-300">Click to see my current goals and aspirations</p>
+                  </div>
+                </div>
+
+                <div 
+                  className="flex-shrink-0 w-80 h-96 bg-gray-900 rounded-2xl border border-cyan-500/30 cursor-pointer hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  onClick={() => setSelectedBubble('Awards')}
+                >
+                  <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
+                    <Image
+                      src="./websitepics/award.png"
+                      alt="Awards"
+                      fill
+                      className="object-cover"
+                      priority
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-2">Awards</h3>
+                    <p className="text-gray-300">Click to see my achievements and awards</p>
+                  </div>
+                </div>
+
+                {/* Duplicate cards for seamless loop */}
+                <div 
+                  className="flex-shrink-0 w-80 h-96 bg-gray-900 rounded-2xl border border-cyan-500/30 cursor-pointer hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  onClick={() => setSelectedBubble('Powerlifting')}
+                >
+                  <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
+                    <Image
+                      src="./websitepics/powerlifting.jpeg"
+                      alt="Powerlifting"
+                      fill
+                      className="object-cover"
+                      priority
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-2">Powerlifting</h3>
+                    <p className="text-gray-300">Click to learn more about my powerlifting journey</p>
+                  </div>
+                </div>
+
+                <div 
+                  className="flex-shrink-0 w-80 h-96 bg-gray-900 rounded-2xl border border-cyan-500/30 cursor-pointer hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  onClick={() => setSelectedBubble('Volunteering')}
+                >
+                  <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
+                    <Image
+                      src="./websitepics/americanredcross.png1.png"
+                      alt="American Red Cross"
+                      fill
+                      className="object-contain bg-white"
+                      priority
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-2">Volunteering</h3>
+                    <p className="text-gray-300">Click to learn more about my volunteer work</p>
+                  </div>
+                </div>
+
+                <div 
+                  className="flex-shrink-0 w-80 h-96 bg-gray-900 rounded-2xl border border-cyan-500/30 cursor-pointer hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  onClick={() => setSelectedBubble('Current Goals')}
+                >
+                  <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
+                    <Image
+                      src="./websitepics/goals.png"
+                      alt="Current Goals"
+                      fill
+                      className="object-cover"
+                      priority
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-2">Current Goals</h3>
+                    <p className="text-gray-300">Click to see my current goals and aspirations</p>
+                  </div>
           </div>
 
-                    {/* Duplicate set for seamless loop - also repeated 3 times */}
-                    <div className="flex items-center gap-16 mx-8">
-                      {/* 1st set */}
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/powerlifting.jpeg"
-                              alt="Powerlifting"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Powerlifting</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/americanredcross.png1.png"
-                              alt="American Red Cross Icon"
-                              fill
-                              className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">American Red Cross</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/goals.png"
-                              alt="Current Goals"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Current Goals</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/award.png"
-                              alt="Awards"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Awards</p>
-                      </div>
-                      {/* 2nd set */}
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/powerlifting.jpeg"
-                              alt="Powerlifting"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Powerlifting</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/americanredcross.png1.png"
-                              alt="American Red Cross Icon"
-                              fill
-                              className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">American Red Cross</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/goals.png"
-                              alt="Current Goals"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Current Goals</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/award.png"
-                              alt="Awards"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Awards</p>
-                      </div>
-                      {/* 3rd set */}
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Powerlifting')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/powerlifting.jpeg"
-                              alt="Powerlifting"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Powerlifting</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Volunteering')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/americanredcross.png1.png"
-                              alt="American Red Cross Icon  "
-                              fill
-                              className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">American Red Cross</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Current Goals')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/goals.png"
-                              alt="Current Goals"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Current Goals</p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div onClick={() => setSelectedBubble('Awards')} className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/25 flex items-center justify-center overflow-hidden">
-                          <div className="relative w-full h-full rounded-full overflow-hidden">
-                            <Image
-                              src="./websitepics/award.png"
-                              alt="Awards"
-                              fill
-                              className="object-cover rounded-full"
-                              unoptimized
-                            />
-                          </div>
-                        </div>
-                        <p className="text-center text-cyan-400 font-semibold mt-2 text-sm">Awards</p>
-                      </div>
-                    </div>
+                <div 
+                  className="flex-shrink-0 w-80 h-96 bg-gray-900 rounded-2xl border border-cyan-500/30 cursor-pointer hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  onClick={() => setSelectedBubble('Awards')}
+                >
+                  <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
+                    <Image
+                      src="./websitepics/award.png"
+                      alt="Awards"
+                      fill
+                      className="object-cover"
+                      priority
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-2">Awards</h3>
+                    <p className="text-gray-300">Click to see my achievements and awards</p>
                   </div>
                 </div>
               </div>

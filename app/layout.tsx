@@ -41,7 +41,7 @@ export default function RootLayout({
             width: '100vw'
           }}
         >
-          {children}
+           {children}
         </div>
       </body>
     </html>
