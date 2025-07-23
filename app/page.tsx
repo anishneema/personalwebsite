@@ -11,7 +11,6 @@ import { Badge } from "@/components/ui/badge"
 import { Github, Linkedin, Download, ChevronDown, Mail, ExternalLink, CheckCircle } from "lucide-react"
 import { TypeAnimation } from "react-type-animation"
 import { Navbar } from "@/components/navbar"
-import { PageTransition } from "@/components/page-transition"
 
 export default function Home() {
   const projectsRef = useRef<HTMLDivElement>(null)
@@ -73,8 +72,7 @@ export default function Home() {
   const thankYouAnimation = "transition-all duration-700 ease-out opacity-0 scale-95 animate-fade-in-scale"
 
   return (
-    <PageTransition>
-      <main className="min-h-screen bg-black text-white overflow-x-hidden">
+    <main className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Custom Cursor Bubble */}
       <div 
           className={`fixed pointer-events-none z-[9999] transition-opacity duration-200 ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}
@@ -127,11 +125,11 @@ export default function Home() {
             sequence={[
               "Problem Solver",
               2000,
-                      "Bug Slayer",
+                      "Aspiring Engineer",
                       2000,
-                      "Bridge Builder",
+                      "Creative Thinker",
               2000,
-                      "Lifelong learner",
+                      "Dedicated & Disciplined",
               2000,
             ]}
             wrapper="h2"
@@ -276,7 +274,7 @@ export default function Home() {
             <Card className="overflow-hidden border border-gray-700 bg-gray-800 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 hover:scale-[1.02]">
               <div className="p-8">
                 <CardHeader className="p-0 mb-4">
-                  <CardTitle className="text-3xl font-bold text-white">Bluestamp Engineering</CardTitle>
+                  <CardTitle className="text-3xl font-bold text-white">Wall-E Interactive Robot</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="flex flex-wrap gap-2 mb-6">
@@ -428,6 +426,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-    </PageTransition>
   )
 }

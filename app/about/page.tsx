@@ -5,7 +5,6 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, X } from "lucide-react"
-import { PageTransition, AnimatedLink } from "@/components/page-transition"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
 
@@ -23,38 +22,7 @@ export default function About() {
 
   const handleBackClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    if (isTransitioning) return
-    isTransitioning = true
-    
-    // Create a fade overlay
-    const fadeOverlay = document.createElement('div')
-    fadeOverlay.style.position = 'fixed'
-    fadeOverlay.style.top = '0'
-    fadeOverlay.style.left = '0'
-    fadeOverlay.style.width = '100%'
-    fadeOverlay.style.height = '100%'
-    fadeOverlay.style.backgroundColor = 'black'
-    fadeOverlay.style.zIndex = '9999'
-    fadeOverlay.style.opacity = '0'
-    fadeOverlay.style.transition = 'opacity 0.3s ease-out'
-    document.body.appendChild(fadeOverlay)
-    
-    // Fade in the overlay
-    setTimeout(() => {
-      fadeOverlay.style.opacity = '1'
-    }, 10)
-    
-    // Navigate after fade completes
-    setTimeout(() => {
-      router.push('/')
-      // Clean up the overlay after navigation
-      setTimeout(() => {
-        if (document.body.contains(fadeOverlay)) {
-          document.body.removeChild(fadeOverlay)
-        }
-        isTransitioning = false
-      }, 200)
-    }, 300)
+    router.push('/')
   }
 
   // Modal content for each bubble
@@ -170,7 +138,7 @@ export default function About() {
               ) : selectedBubble === 'Volunteering' ? (
                 <div className="w-40 h-40 relative mb-6 flex items-center justify-center">
                   <Image
-                    src="./websitepics/americanredcross.png1.png"
+                    src="./websitepics/redcross.jpg"
                     alt="American Red Cross Icon"
                     fill
                     className="object-contain rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -192,7 +160,7 @@ export default function About() {
               ) : selectedBubble === 'Awards' ? (
                 <div className="w-40 h-40 relative mb-6 flex items-center justify-center">
                   <Image
-                    src="./websitepics/award.png"
+                    src="./websitepics/award.jpg"
                     alt="Awards"
                     fill
                     className="object-cover rounded-full border-4 border-cyan-500 shadow-lg bg-white"
@@ -245,8 +213,7 @@ export default function About() {
         </div>
       )}
 
-      <PageTransition>
-    <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen bg-black text-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -303,7 +270,7 @@ export default function About() {
                 >
                   <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
                     <Image
-                      src="./websitepics/americanredcross.png1.png"
+                      src="./websitepics/redcross.jpg"
                       alt="American Red Cross"
                       fill
                       className="object-contain bg-white"
@@ -323,7 +290,7 @@ export default function About() {
                 >
                   <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
                     <Image
-                      src="./websitepics/goals.png"
+                      src="./websitepics/quote.png"
                       alt="Current Goals"
                       fill
                       className="object-cover"
@@ -343,7 +310,7 @@ export default function About() {
                 >
                   <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
                     <Image
-                      src="./websitepics/award.png"
+                      src="./websitepics/award.jpg"
                       alt="Awards"
                       fill
                       className="object-cover"
@@ -384,7 +351,7 @@ export default function About() {
                 >
                   <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
                     <Image
-                      src="./websitepics/americanredcross.png1.png"
+                      src="./websitepics/redcross.jpg"
                       alt="American Red Cross"
                       fill
                       className="object-contain bg-white"
@@ -404,7 +371,7 @@ export default function About() {
                 >
                   <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
                     <Image
-                      src="./websitepics/goals.png"
+                      src="./websitepics/quote.png"
                       alt="Current Goals"
                       fill
                       className="object-cover"
@@ -424,7 +391,7 @@ export default function About() {
                 >
                   <div className="relative w-full h-64 rounded-t-2xl overflow-hidden">
                     <Image
-                      src="./websitepics/award.png"
+                      src="./websitepics/award.jpg"
                       alt="Awards"
                       fill
                       className="object-cover"
@@ -445,16 +412,16 @@ export default function About() {
               <div className="bg-black/60 rounded-3xl border border-cyan-900/30 shadow-2xl p-10 md:p-16 flex flex-col items-center max-w-5xl mx-auto">
                 {/* New intro paragraph */}
                 <p className="text-2xl text-center text-gray-100 mb-10">
-                  Hi! I'm Anish, a Computer Engineering student at Georgia Tech. I aim to combine both software and hardware to create solutions.
+                  Hi! I'm Anish, a Computer Engineering student at Georgia Tech. On this page you can find many of the things I'm passionate about outside of school and more about me.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
                   <div className="bg-gray-900/80 rounded-2xl p-8 border border-cyan-900/40 flex flex-col items-center">
-                    <h3 className="text-xl font-semibold text-cyan-300 mb-3">Focus</h3>
-                    <p className="text-gray-300 text-center">Embedded systems, full-stack development, and problem solving at the intersection of hardware and software.</p>
+                    <h3 className="text-xl font-semibold text-cyan-300 mb-3">Current Focus</h3>
+                    <p className="text-gray-300 text-center">Get pumped for my first year at tech</p>
                   </div>
                   <div className="bg-gray-900/80 rounded-2xl p-8 border border-cyan-900/40 flex flex-col items-center">
                     <h3 className="text-xl font-semibold text-cyan-300 mb-3">Clubs and Activities</h3>
-                    <p className="text-gray-300 text-center">GT Barbell, IEEE, HackGT, and volunteering in tech outreach and fitness communities.</p>
+                    <p className="text-gray-300 text-center">TBD.</p>
                   </div>
                   <div className="bg-gray-900/80 rounded-2xl p-8 border border-cyan-900/40 flex flex-col items-center">
                     <h3 className="text-xl font-semibold text-cyan-300 mb-3">Skills</h3>
@@ -474,7 +441,6 @@ export default function About() {
         </div>
       </footer>
     </main>
-      </PageTransition>
     </>
   )
 } 

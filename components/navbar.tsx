@@ -2,7 +2,6 @@
 
 import type React from "react"
 import Link from "next/link"
-import { AnimatedLink } from "./page-transition"
 
 interface NavbarProps {
   scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void
@@ -27,11 +26,11 @@ export function Navbar({ scrollToSection, projectsRef, contactRef }: NavbarProps
           >
             Contact
           </button>
-          <AnimatedLink href="/about">
+          <Link href="/about">
             <button className="text-white hover:text-cyan-400 transition-colors">
               About
             </button>
-          </AnimatedLink>
+          </Link>
         </div>
       </div>
     </nav>
