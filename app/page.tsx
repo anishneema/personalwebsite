@@ -297,7 +297,7 @@ export default function Home() {
                       variant="outline"
                       className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 border-none rounded-full px-6 transition-all duration-300"
                     >
-                        <a href="./websitepics/portfolio.pdf" target="_blank" rel="noopener noreferrer">
+                        <a href="./websitepics/Portfolio.pdf" target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" /> Demo Link
                         </a>
                     </Button>
