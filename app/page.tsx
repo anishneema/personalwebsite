@@ -181,7 +181,7 @@ export default function Home() {
     asChild
     className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-xl py-5 text-lg flex items-center justify-center shadow-lg shadow-cyan-500/25 transition-all duration-300"
   >
-                    <a href="./websitepics/resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="https://drive.google.com/file/d/1gKZ6nXmMucreQZq9B6dHABaEFULnUZZp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
       <Download className="w-5 h-5 mr-2" />
       Download Resume
     </a>
