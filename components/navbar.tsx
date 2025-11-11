@@ -16,17 +16,17 @@ export function Navbar({ scrollToSection, projectsRef, contactRef }: NavbarProps
         <div className="flex space-x-6">
           <button
             onClick={() => scrollToSection(projectsRef)}
-            className="text-white hover:text-cyan-400 transition-colors"
+            className="cursor-target text-white hover:text-cyan-400 transition-colors"
           >
             Projects
           </button>
           <button
             onClick={() => contactRef && scrollToSection(contactRef)}
-            className="text-white hover:text-cyan-400 transition-colors"
+            className="cursor-target text-white hover:text-cyan-400 transition-colors"
           >
             Contact
           </button>
-          <Link href="/about">
+          <Link href="/about" className="cursor-target">
             <button className="text-white hover:text-cyan-400 transition-colors">
               About
             </button>
