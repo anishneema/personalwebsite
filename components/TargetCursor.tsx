@@ -19,6 +19,7 @@ const TargetCursor = ({
   const activeStrengthRef = useRef<number>(0);
 
   const isMobile = useMemo(() => {
+    if (typeof window === 'undefined') return false; // Guard against SSR
     const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     const isSmallScreen = window.innerWidth <= 768;
     const userAgent = (navigator.userAgent || (navigator as any).vendor) as string;

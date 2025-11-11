@@ -44,8 +44,8 @@ export const ChromaGrid = ({
     const el = rootRef.current;
     if (!el) return;
 
-    setX.current = gsap.quickSetter(el, '--x', 'px');
-    setY.current = gsap.quickSetter(el, '--y', 'px');
+    setX.current = gsap.quickSetter(el, '--x', 'px') as (value: number) => void;
+    setY.current = gsap.quickSetter(el, '--y', 'px') as (value: number) => void;
 
     const { width, height } = el.getBoundingClientRect();
     pos.current = { x: width / 2, y: height / 2 };

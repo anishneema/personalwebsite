@@ -78,7 +78,7 @@ export default function About() {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: [0.22, 1, 0.36, 1] as const
       }
     },
     exit: {
@@ -104,7 +104,7 @@ export default function About() {
       rotateX: 0,
       transition: {
         duration: 0.7,
-        ease: [0.22, 1, 0.36, 1]
+        ease: [0.22, 1, 0.36, 1] as const
       }
     },
     exit: {
@@ -114,7 +114,7 @@ export default function About() {
       rotateX: 15,
       transition: {
         duration: 0.5,
-        ease: [0.22, 1, 0.36, 1]
+        ease: [0.22, 1, 0.36, 1] as const
       }
     }
   }
