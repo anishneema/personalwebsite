@@ -29,12 +29,12 @@ export default function Home() {
     ref.current?.scrollIntoView({ behavior: "smooth" })
   }
 
-  const totalProjects = 5
-  // We'll have: [clone of last] [0] [1] [2] [3] [4] [clone of first]
-  // So indices: 0           1   2   3   4   5   6
-  // Real items are at indices 1-5
+  const totalProjects = 6
+  // We'll have: [clone of last] [0] [1] [2] [3] [4] [5] [clone of first]
+  // So indices: 0           1   2   3   4   5   6   7
+  // Real items are at indices 1-6
 
-  // Get the actual project index for display (0-4)
+  // Get the actual project index for display (0-5)
   const getDisplayIndex = (index: number) => {
     if (index === 0) return totalProjects - 1 // Clone of last
     if (index === totalProjects + 1) return 0 // Clone of first
@@ -329,22 +329,18 @@ export default function Home() {
                   transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none'
                 }}
               >
-                {/* Clone of Last Project (Remi) - for seamless loop */}
+                {/* Clone of Last Project (ECE 1100) - for seamless loop */}
                 <div className="min-w-full px-2">
                   <Card className="overflow-hidden border border-gray-700 bg-gray-800 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300">
               <div className="p-8">
                 <CardHeader className="p-0 mb-4">
-                  <CardTitle className="cursor-target text-3xl font-bold text-white">Remi (HackPrinceton Fall 2025)</CardTitle>
+                  <CardTitle className="cursor-target text-3xl font-bold text-white">ECE 1100 Project</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">React</Badge>
-                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">Express.js</Badge>
-                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">Gemini LLM</Badge>
-                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">Photon</Badge>
-                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">OAuth</Badge>
-                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">NoSQL</Badge>
-                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">SQLite</Badge>
+                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">ECE 1100</Badge>
+                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">Hardware</Badge>
+                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">Engineering Design</Badge>
                   </div>
                   <div className="flex flex-wrap gap-3">
                     <Button
@@ -352,8 +348,8 @@ export default function Home() {
                       variant="outline"
                       className="cursor-target bg-gray-700 text-white hover:bg-gray-600 border-gray-600 rounded-full px-6 transition-all duration-300"
                     >
-                        <a href="https://github.com/B3rK-3/HackPrinceton" target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" /> Github Link
+                        <a href="https://anishneema.github.io/ECE1100Demo/#outcomes" target="_blank" rel="noopener noreferrer" aria-label="Read about the ECE 1100 project">
+                      <ExternalLink className="mr-2 h-4 w-4" /> Read About It
                         </a>
                     </Button>
                     <Button
@@ -361,7 +357,7 @@ export default function Home() {
                       variant="outline"
                       className="cursor-target bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 border-none rounded-full px-6 transition-all duration-300"
                     >
-                        <a href="https://youtu.be/ImRRI6CSAU4?si=bplRv5tqmDobRYZP" target="_blank" rel="noopener noreferrer">
+                        <a href="https://youtube.com/shorts/lY-kNzsX40E?si=YEvYykwbznHbziDe" target="_blank" rel="noopener noreferrer" aria-label="Watch ECE 1100 project demo">
                       <ExternalLink className="mr-2 h-4 w-4" /> Demo Link
                         </a>
                     </Button>
@@ -371,8 +367,8 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-4 p-6 bg-gray-900">
                 <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
                   <Image
-                      src="./websitepics/remi4website.png"
-                      alt="Remi Project Overview"
+                      src="./websitepics/ece1100proj.jpg"
+                      alt="ECE 1100 Project Overview"
                     width={600}
                     height={300}
                       className="object-contain w-full h-full bg-black"
@@ -381,8 +377,8 @@ export default function Home() {
                 </div>
                 <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                   <Image
-                      src="./websitepics/introtobioremi.png"
-                      alt="Remi Intro to Bio Dashboard"
+                      src="./websitepics/ece1100proj.jpg"
+                      alt="ECE 1100 Project Details"
                     width={600}
                     height={300}
                       className="object-contain w-full h-full bg-black"
@@ -700,6 +696,66 @@ export default function Home() {
                   <Image
                       src="./websitepics/introtobioremi.png"
                       alt="Remi Intro to Bio Dashboard"
+                    width={600}
+                    height={300}
+                      className="object-contain w-full h-full bg-black"
+                      unoptimized
+                  />
+                </div>
+              </div>
+            </Card>
+                  </div>
+
+                {/* Project Card 6 - ECE 1100 */}
+                <div className="min-w-full px-2">
+                  <Card className="overflow-hidden border border-gray-700 bg-gray-800 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300">
+              <div className="p-8">
+                <CardHeader className="p-0 mb-4">
+                  <CardTitle className="cursor-target text-3xl font-bold text-white">ECE 1100 Project</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">Arduino Programming</Badge>
+                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">Hardware Design</Badge>
+                    <Badge className="bg-cyan-900 text-cyan-300 hover:bg-cyan-800 border border-cyan-700">Engineering Design</Badge>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <Button
+                        asChild
+                      variant="outline"
+                      className="cursor-target bg-gray-700 text-white hover:bg-gray-600 border-gray-600 rounded-full px-6 transition-all duration-300"
+                    >
+                        <a href="https://anishneema.github.io/ECE1100Demo/#outcomes" target="_blank" rel="noopener noreferrer" aria-label="Read about the ECE 1100 project">
+                      <ExternalLink className="mr-2 h-4 w-4" /> Read About It
+                        </a>
+                    </Button>
+                    <Button
+                        asChild
+                      variant="outline"
+                      className="cursor-target bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 border-none rounded-full px-6 transition-all duration-300"
+                    >
+                        <a href="https://youtube.com/shorts/lY-kNzsX40E?si=YEvYykwbznHbziDe" target="_blank" rel="noopener noreferrer" aria-label="Watch ECE 1100 project demo">
+                      <ExternalLink className="mr-2 h-4 w-4" /> Demo Link
+                        </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 p-6 bg-gray-900">
+                <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
+                  <Image
+                      src="./websitepics/ece1100proj.jpg"
+                      alt="ECE 1100 Project Overview"
+                    width={600}
+                    height={300}
+                      className="object-contain w-full h-full bg-black"
+                      unoptimized
+                  />
+                </div>
+                <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+                  <Image
+                      src="./websitepics/ece1100proj.jpg"
+                      alt="ECE 1100 Project Details"
                     width={600}
                     height={300}
                       className="object-contain w-full h-full bg-black"
