@@ -8,7 +8,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Download, ChevronLeft, ChevronRight, Mail, ExternalLink, CheckCircle } from "lucide-react"
+import { Github, Linkedin, Download, ChevronLeft, ChevronRight, Mail, ExternalLink, CheckCircle, Boxes } from "lucide-react"
+import { AnimatedLink } from "@/components/page-transition"
 import { TypeAnimation } from "react-type-animation"
 import { Navbar } from "@/components/navbar"
 import TargetCursor from "@/components/TargetCursor"
@@ -276,15 +277,13 @@ export default function Home() {
         </div>
         
         <div className="w-[400px] max-w-full mt-4 relative z-10">
-  <Button
-    asChild
-    className="cursor-target w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-xl py-5 text-lg flex items-center justify-center shadow-xl shadow-black/60 hover:shadow-2xl hover:shadow-cyan-500/40 transition-all duration-300"
-  >
-                    <a href="https://drive.google.com/file/d/1gKZ6nXmMucreQZq9B6dHABaEFULnUZZp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-      <Download className="w-5 h-5 mr-2" />
-      Download Resume
-    </a>
-  </Button>
+          <AnimatedLink
+            href="/world"
+            className="cursor-target w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-xl py-5 text-lg flex items-center justify-center font-medium no-underline shadow-xl shadow-black/60 hover:shadow-2xl hover:shadow-cyan-500/40 transition-all duration-300"
+          >
+            <Boxes className="w-5 h-5 mr-2" />
+            View My Experiences
+          </AnimatedLink>
         </div>
       </div>
 
